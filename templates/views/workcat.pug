@@ -1,0 +1,22 @@
+extends ../layouts/default
+
+block content
+	-var filter = {"摄影作品":"photographs","代码作品":"webs","UI作品":"uis","视频作品":"videos"}
+	.container.work-group
+		article.work-item
+			h3=data.type
+			each temp in data.cats
+				div.col-lg-2.col-md-3.col-sm-4.col-xl-6
+					div.media
+						div.media-header
+							h5
+								a(href="/work/"+filter[temp.type]+"/"+temp._id+'.html', target="_blank")=temp.name
+								- var date = new Date(temp.time)
+								- var time = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();  
+									span=time
+						div.media-body
+							a(href="/work/"+filter[temp.type]+"/"+temp._id+'.html', target="_blank")
+								img(src="/upload/work/pics/"+temp.pic.filename)
+						div.media-footer
+							a(href="/work/"+filter[temp.type]+"/"+temp._id+'.html', target="_blank")=temp.intro
+		

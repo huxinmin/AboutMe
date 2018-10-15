@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /*?*
+Disallow: /js
+Disallow: /images
+Disallow: /work
+Disallow: /styles
+Disallow: /fonts
+Disallow: /search
+Disallow: /archive
+Disallow: /tag
+Sitemap: https://www.huxinmin.com/sitemap.xml

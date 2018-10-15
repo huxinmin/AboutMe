@@ -1,0 +1,58 @@
+doctype html
+html
+	head
+		meta(charset="utf-8")
+		meta(name="viewport", content="width=device-width, initial-scale=0.5")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		title="404"
+		meta(name="keywords", content="404")
+		meta(name="description", content="404")
+		link(rel="shortcut icon", href="/favicon.ico", type="image/x-icon")
+		link(href="/404/css/main.css", rel="stylesheet")
+		link(href="/404/css/tipsy.css", rel="stylesheet")
+		//-[if lt IE 9]
+			script(src="https://cdn.bootcss.com/html5shiv/r29/html5.min.js")
+			script(src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js")
+		//-[endif]
+		script.
+			var _hmt = _hmt || [];
+			(function() {
+				var hm = document.createElement("script");
+				hm.src = "https://hm.baidu.com/hm.js?44fbf3f83d5802e8a86ebc8206194142";
+				var s = document.getElementsByTagName("script")[0];
+				s.parentNode.insertBefore(hm, s);
+			})();
+	body
+		#wrapper
+			.graphic
+			.not-found-text
+				h1.not-found-text="没有找到该页面!"
+			.top-menu
+				a.with-tooltip(href="/", title="返回首页")="返回首页"
+			.dog-wrapper
+				.dog
+				.dog-bubble
+				.bubble-options
+					p.dog-bubble="迷路了？不要担心，我来帮你找到正确的路!"
+					p.dog-bubble="汪!汪!汪!"
+					p.dog-bubble="不要担心，我来了！"
+					p.dog-bubble="要是有个曲奇饼干就好了"
+						img(style="margin-top:8px" src="/404/images/cookie.png" alt="cookie")
+					p.dog-bubble="天啊！ 这很烦人！!"
+					p.dog-bubble="我帅吗?"
+					p.dog-bubble="或者我只是在圈子？不想..."
+					p.dog-bubble="那么...好吧，我现在正式迷路了..."
+					p.dog-bubble="我好像看见了一只"
+						img(style="margin-top:8px" src="/404/images/cat.png" alt="cat")
+					p.dog-bubble="What are we supposed to be looking for, anyway? @_@"
+			.planet
+		script(src='https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js')
+		script(src='/404/scripts/jquery.tipsy.js')
+		script(src='/404/scripts/custom-scripts.js')
+		script.
+			$(document).ready(function(){
+				rotate();
+				dogRun();
+				dogTalk();
+				$('.with-tooltip').tipsy({gravity: $.fn.tipsy.autoNS});
+			});
