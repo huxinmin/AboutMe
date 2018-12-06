@@ -1,7 +1,7 @@
 //配置参考地址      https://help.aliyun.com/document_detail/32070.html?spm=5176.doc32068.6.738.d5iRqV
 //ali-oss教程地址   https://github.com/ali-sdk/ali-oss?spm=5176.doc32068.2.2.d5iRqV#getobjecturlname-baseurl
 // 使用异步方式教程地址 https://cnodejs.org/topic/570f8961400ca111729e8858?spm=5176.doc32070.2.8.HrYpHs
-var OSS = require('ali-oss').Wrapper;
+var OSS = require('ali-oss');
 require('dotenv').config();
 
 var client = new OSS({	
