@@ -1,0 +1,22 @@
+extends ../layouts/default
+include ../mixins/aside
+include ../mixins/single-post-thumb
+include ../mixins/tree
+
+block css
+	link(href="https://cdn.bootcss.com/bootstrap-treeview/1.2.0/bootstrap-treeview.min.css", rel="stylesheet")
+block content
+	.container: .row
+		div.col-sm-12.col-md-12.col-lg-8
+			if !!data.tagResults.length
+				div.posts-group.search-group
+					each item in data.tagResults
+						+post(item)
+			else
+				.alert.alert-danger(role="alert")="该标签暂时还没有内容"
+		+aside(data)
+			
+
+
+block js
+	+tree(data)

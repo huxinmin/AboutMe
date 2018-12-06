@@ -1,0 +1,33 @@
+extends ../layouts/default
+include ../mixins/aside
+include ../mixins/single-post-thumb
+include ../mixins/tree
+
+
+block css
+	link(href="https://cdn.bootcss.com/bootstrap-treeview/1.2.0/bootstrap-treeview.min.css", rel="stylesheet")
+block content
+	.container: .row
+		div.col-sm-12.col-md-12.col-lg-8
+			div.carousel.slide#carousel(data-ride="carousel")
+				ol.carousel-indicators
+					each item, index in data.carousels
+						li(data-target="#carousel", data-slide-to=index, class= index==0? "active": "")
+				div.carousel-inner(role="listbox")
+					each item,index in data.carousels
+						div.item(class = index==0? "active":"")
+							img(src=item.url.replace("http://huxinmin.oss-cn-qingdao.aliyuncs.com","http://static.huxinmin.com"), alt="轮播图")
+			div.posts-group
+				each item in data.recentlyPosts
+					+post(item)
+				if data.recentlyPosts.length>=20
+					.alert.alert-success.next-page(role="alert")="下一页"
+		+aside(data)
+		
+
+block js
+	+tree(data)
+	script.
+		$(document).ready(function(){
+			$('.carousel').carousel();
+		});

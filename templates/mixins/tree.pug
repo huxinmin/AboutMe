@@ -1,8 +1,0 @@
-mixin tree(data)
-	script(src='https://cdn.bootcss.com/bootstrap-treeview/1.2.0/bootstrap-treeview.min.js')
-	//要在前端js使用后端的数据,首先在后端JSON.stringify(data),然后前台直接使用 !{data}
-	- var tree = JSON.stringify(data.tree)
-	script.
-		$(document).ready(function(){
-			$('#tree').treeview({data: !{tree}, enableLinks: true, levels:1  });
-		});

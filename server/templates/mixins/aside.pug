@@ -1,0 +1,27 @@
+mixin aside(data)
+	aside.col-sm-12.col-md-12.col-lg-4
+		div.tree-group.widget
+			h4="所有分类"
+			div#tree
+		div.archives-group.widget
+			h4="文章归档"
+			each archive in data.archives
+				a(href='/archive/'+archive.name+'.html', target="_blank")=archive.name
+		div.tags-group.widget
+			h4="热门标签"
+			each tag in data.tags
+				a.hot-tag(href='/tag/'+tag._id+'.html', target="_blank")=tag.name
+		div.recently-comments.widget
+			h4="最近评论"
+			each comment in data.recentlyComments
+				div.recently-comment-item
+					a(href='/home/'+comment.post+'.html', target='_blank')
+						span.recently-comment-name=comment.name.first
+						span.recently-comment-message=comment.message
+						- var date = new Date(comment.time)
+						- var time = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+						span.recently-comment-time=time
+		div.friend-links-group.widget
+			h4="友情链接"
+			each link in data.friendlinks
+				a.friend-links-item(href=link.src, rel='nofollow', target="_blank")=link.caption

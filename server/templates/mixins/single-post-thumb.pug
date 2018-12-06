@@ -1,0 +1,26 @@
+mixin post(item)
+	article.post-item.media
+		div.media-left
+			a(href='/home/'+item._id+'.html' ,target="_blank")
+				img.lazyload(data-original=!!item.pic&&!!item.pic.filename?"/upload/post/pics/"+item.pic.filename:"/images/default.jpg", alt=item.name+'缩略图')
+		div.media-right
+			a(href='/home/'+item._id+'.html' ,target="_blank")
+				h4.media-heading=item.name
+			h5.media-tags
+				each tag in item.tags
+					a(href="/tag/"+tag._id, target="_blank")=tag.name
+			p.media-intro
+				a(href='/home/'+item._id+'.html' ,target="_blank")
+					=item.intro
+			div.media-right-footer
+				- var date = new Date(item.time)
+				- var time = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();  
+					span.post-time
+						i.glyphicon.glyphicon-time
+						=time
+				span.post-comments
+					i.glyphicon.glyphicon-comment
+					=item.comments
+				span.post-views
+					i.glyphicon.glyphicon-eye-open
+					=item.views
