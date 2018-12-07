@@ -1,0 +1,18 @@
+.index-content{
+	width: 1200px;
+	margin: auto;
+}
+.index-content-group{
+	display: flex;
+	justify-content: space-between;
+	margin-top: 40px;
+}
+.content-side-left{
+	width: 920px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+.content-side-right{
+	width: 240px;
+}
