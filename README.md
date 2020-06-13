@@ -2,7 +2,7 @@
 ![travis build](https://www.travis-ci.org/huxinmin/huxinmin.github.io.svg?branch=master)
 
 ## 在线地址: 
-[huxinmin.com](https://www.huxinmin.com)
+[huxinmin.com](https://www.huxinmin.cn)
 
 ## 效果预览
 ![效果预览](./thumbnail.png)
